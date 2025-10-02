@@ -37,25 +37,61 @@ $config = [
 $current = $config[$categoria] ?? $config['personajes'];
 ?>
 
-<div class="container">
+<div class="container-fluid px-3">
     <h1 class="section-title text-center mb-4"><?= strtoupper($current['titulo']) ?></h1>
 
     <?php if ($categoria === 'creditos'): ?>
-        <div class="creditos-content">
-            <h3 style="color: #FF8F00;">Desarrollado por:</h3>
-            <p>Tu Nombre - Desarrollador Web</p>
-            <h3 style="color: #FF8F00;">Tecnologías utilizadas:</h3>
-            <ul>
-                <li>PHP & MySQL</li>
-                <li>Bootstrap 5</li>
-                <li>HTML5 & CSS3</li>
-            </ul>
-            <h3 style="color: #FF8F00;">Inspirado en:</h3>
-            <p>La trilogía "Volver al Futuro" (1985-1990)<br>
-                Dirigida por Robert Zemeckis</p>
+        <div class="container my-5">
+            <div class="row justify-content-center g-4">
+                <!-- Desarrolladores -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #2d2d2d; color: #fff;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title mb-3" style="color: #b8860b;">Desarrollado por</h3>
+                            <p class="mb-1">Cynthia de Mey</p>
+                            <p class="mb-1">Angela Choque</p>
+                            <p class="mb-1">Miriam Ferreiro</p>
+                            <p class="mb-1">Silvia</p>
+                            <p class="mb-1">Clara Iriarte</p>
+                            <p class="mb-1">Lara Devoto</p>
+                            <p class="mb-1">Miguel Escobar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tecnologías -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #3a3a3a; color: #fff;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title mb-3" style="color: #b8860b;">Tecnologías utilizadas</h3>
+                            <ul class="list-unstyled">
+                                <li>PHP & MySQL</li>
+                                <li>Bootstrap 5</li>
+                                <li>HTML5 & CSS3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inspiración -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #1a1a2e; color: #fff;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title mb-3" style="color: #b8860b;">Inspirado en</h3>
+                            <p>
+                                La trilogía <strong>"Volver al Futuro"</strong> (1985-1990) <br>
+                                Dirigida por <em>Robert Zemeckis</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     <?php else: ?>
         <div class="container-fluid">
+            <div class="row">
+                <!-- Contenido principal -->
+                <div class="col-md-9">
             <?php
             // Obtener datos de la base de datos
             if ($categoria === 'personajes') {
@@ -177,6 +213,59 @@ $current = $config[$categoria] ?? $config['personajes'];
                     <?php endforeach;
                 }
             } ?>
+                </div>
+                
+                <!-- Sidebar de datos curiosos -->
+                <div class="col-md-3">
+                    <div class="datos-curiosos" style="background: rgba(26, 26, 26, 0.8); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="color: #FF8F00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem;">Datos Curiosos</h4>
+                        
+                        <?php if ($categoria === 'personajes'): ?>
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">¿Sabías que...?</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Michael J. Fox no era la primera opción para Marty McFly.</p>
+                            </div>
+                            
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Dato Curioso</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Doc Brown se inspiró en Albert Einstein y Leopold Stokowski.</p>
+                            </div>
+                        <?php elseif ($categoria === 'vehiculos'): ?>
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">DeLorean DMC-12</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Fue elegido porque parecía una nave espacial y tenía puertas de gaviota.</p>
+                            </div>
+                            
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">88 mph</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Esta velocidad se eligió porque se veía bien en el velocímetro digital.</p>
+                            </div>
+                        <?php elseif ($categoria === 'peliculas'): ?>
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Trilogía Épica</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">La segunda y tercera película se filmaron consecutivamente.</p>
+                            </div>
+                            
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Fecha Icónica</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">21 de octubre de 2015 se volvió una fecha mundialmente famosa.</p>
+                            </div>
+                        <?php else: ?>
+                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Viajes en el Tiempo</h6>
+                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">La saga abarca desde 1885 hasta 2015, un total de 130 años.</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     <?php endif; ?>
 </div>

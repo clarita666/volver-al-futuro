@@ -1,32 +1,8 @@
 <?php require "partials/header.php"   ?>
 
-
-
-<!-- CARRUSEL -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/banner1.jpg" class="d-block w-100" alt="Banner 1">
-          </div>
-          <div class="carousel-item">
-            <img src="img/banner2.jpg" class="d-block w-100" alt="Banner 2">
-          </div>
-          <div class="carousel-item">
-            <img src="img/banner3.jpg" class="d-block w-100" alt="Banner 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="container-fluid p-0">
+    <!-- BANNER PRINCIPAL -->
+    <img src="../img/a.jpg" class="w-100" alt="Volver al Futuro" style="height: 400px; object-fit: cover;">
 </div>
 
 <!-- TEXTO DESCRIPTIVO -->

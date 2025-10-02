@@ -44,6 +44,9 @@ if (!empty($termino)) {
                         case 'vehiculos':
                             $link = 'vehiculos_info.php?id=' . $resultado['id'];
                             break;
+                        case 'linea_tiempo':
+                            $link = 'cronologia_info.php?id=' . $resultado['id'];
+                            break;
                         case 'cronologia':
                             $link = 'cronologia_info.php?id=' . $resultado['id'];
                             break;

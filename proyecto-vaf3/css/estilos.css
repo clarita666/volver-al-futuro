@@ -1,0 +1,846 @@
+/* Volver al Futuro - Estilos Unificados */
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@400;500&display=swap');
+
+/* Variables de colores */
+:root {
+    --color-primary: #1a1a2e;
+    --color-secondary: #16213e;
+    --color-accent-blue: #FF8F00;
+    --color-accent-orange: #FF8F00;
+    --color-text-light: #FBFBFB;
+    --color-text-gray: #E0E0E0;
+    --color-glass: rgba(255, 255, 255, 0.1);
+    --color-glass-border: rgba(255, 143, 0, 0.3);
+}
+
+/* Estilos base */
+body {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-text-light);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* Footer fijo en la parte inferior */
+footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+}
+
+/* Títulos */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    color: var(--color-accent-blue);
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 0 10px #FF8F00;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-accent-orange);
+    margin: 3rem 2rem 1rem 2rem;
+    text-shadow: 0 0 8px rgba(255, 143, 0, 0.5);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent-orange);
+}
+
+h3, h4, h5 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-accent-orange);
+}
+
+/* Cards y contenedores de cristal */
+.card, .personaje-card, .pelicula-detalle, .vehiculo-detalle, .evento-detalle, .personaje-detalle {
+    background: var(--color-glass);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover, .personaje-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+}
+
+/* Grids */
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+
+/* Imágenes en cards */
+.personaje-card img, .card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent-blue);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.personaje-card:hover img, .card:hover img {
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 0 20px rgba(255, 143, 0, 0.5);
+}
+
+/* Imágenes rectangulares para películas/vehículos */
+.pelicula-img, .vehiculo-img, .evento-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--color-accent-orange);
+}
+
+.personaje-img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--color-accent-orange);
+}
+
+/* Headers de detalles */
+.pelicula-header, .vehiculo-header, .evento-header, .personaje-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+/* Información */
+.info-item {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+    text-align: justify;
+    color: var(--color-text-gray);
+}
+
+/* Botones */
+.btn-volver, .btn-custom {
+    background-color: var(--color-accent-orange);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-volver:hover, .btn-custom:hover {
+    background-color: var(--color-accent-blue);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Nombres y títulos en cards */
+.personaje-nombre {
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Contenedores principales */
+.pelicula-detalle, .vehiculo-detalle, .evento-detalle, .personaje-detalle {
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border: 2px solid var(--color-glass-border);
+}
+
+/* Badges y etiquetas */
+.año-badge, .tipo-badge {
+    background-color: var(--color-accent-orange);
+    color: var(--color-primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Listas especiales */
+.lista-section {
+    margin: 2rem 0;
+}
+
+.lista-section h4 {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.lista-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-section li {
+    background: rgba(255, 143, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent-orange);
+}
+
+/* Resultados de búsqueda */
+.resultado-item {
+    background: var(--color-glass);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.resultado-item:hover {
+    border-color: var(--color-accent-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+}
+
+.no-resultados {
+    text-align: center;
+    padding: 3rem;
+    background: var(--color-glass);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Créditos */
+.creditos-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--color-glass);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pelicula-header, .vehiculo-header, .evento-header, .personaje-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pelicula-img, .vehiculo-img, .evento-img, .personaje-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .grid-container, .personajes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 1rem;
+    }
+}
+
+/* Estilos específicos del index */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+iframe {
+    border: 3px solid var(--color-accent-blue);
+    border-radius: 8px;
+}
+
+/* Texto del index */
+.lead {
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+}
+
+/* Cards del index con fondo naranja */
+.card {
+    background-color: var(--color-accent-orange);
+    color: white;
+}
+
+.card-body h5 {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Sección de texto descriptivo */
+.container p {
+    color: var(--color-text-light);
+}
+
+/* Títulos específicos para páginas de detalle */
+.pelicula-detalle h1,
+.vehiculo-detalle h1,
+.evento-detalle h1,
+.personaje-detalle h1 {
+    color: var(--color-accent-orange) !important;
+}
+
+/* Títulos en páginas de listado */
+.container > h1:first-child {
+    color: var(--color-accent-blue);
+}
+
+/* Secciones de información mejoradas */
+.descripcion-section, .datos-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid var(--color-accent-orange);
+}
+
+.descripcion-section h4, .datos-section h4 {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Iconos en info items */
+.info-item i {
+    color: var(--color-accent-orange);
+    width: 20px;
+    margin-right: 0.5rem;
+}
+
+/* Stats del personaje */
+.personaje-stats {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 143, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid var(--color-accent-orange);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-gray);
+    text-transform: uppercase;
+}
+
+/* Galería mejorada */
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.galeria-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.galeria-overlay i {
+    color: var(--color-accent-orange);
+    font-size: 1.5rem;
+}
+
+.galeria-item:hover .galeria-overlay {
+    opacity: 1;
+}
+
+.galeria-item:hover .galeria-img {
+    transform: scale(1.05);
+}
+
+/* Datos curiosos */
+.datos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 143, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dato-item:hover {
+    border-color: var(--color-accent-orange);
+    transform: translateY(-2px);
+}
+
+.dato-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--color-accent-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dato-icon i {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.dato-content h6 {
+    color: var(--color-accent-orange);
+    margin: 0 0 0.5rem 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.dato-content p {
+    color: var(--color-text-gray);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Layout horizontal para personajes */
+.personajes-horizontal {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 2rem 2rem 2rem;
+    margin-bottom: 2rem;
+    scroll-behavior: smooth;
+}
+
+.personajes-horizontal::-webkit-scrollbar {
+    height: 8px;
+}
+
+.personajes-horizontal::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.personajes-horizontal::-webkit-scrollbar-thumb {
+    background: var(--color-accent-orange);
+    border-radius: 10px;
+}
+
+.personaje-card-horizontal {
+    background: var(--color-glass);
+    border-radius: 15px;
+    padding: 0;
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    min-width: 250px;
+    max-width: 250px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.personaje-card-horizontal:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+}
+
+.personaje-card-horizontal .personaje-imagen-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.personaje-card-horizontal .personaje-imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.personaje-card-horizontal:hover .personaje-imagen-container img {
+    transform: scale(1.05);
+}
+
+.personaje-card-horizontal .personaje-info {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.personaje-card-horizontal .personaje-nombre {
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.personaje-card-horizontal .personaje-fecha {
+    color: var(--color-accent-orange);
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+    font-weight: 500;
+}
+
+.personaje-card-horizontal .personaje-descripcion {
+    color: var(--color-text-gray);
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-top: auto;
+    flex-grow: 1;
+}
+
+/* Sección de película limpia */
+.pelicula-section {
+    margin-bottom: 4rem;
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.pelicula-section h2 {
+    margin: 0 0 1.5rem 0;
+    padding: 0 2rem;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--color-accent-orange);
+    padding-bottom: 0.5rem;
+}
+
+/* Carrusel de personajes */
+.personajes-carrusel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.carrusel-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.carrusel-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carrusel-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.carrusel-container::-webkit-scrollbar-thumb {
+    background: var(--color-accent-orange);
+    border-radius: 10px;
+}
+
+/* Cards del carrusel */
+.personaje-card-carrusel {
+    background: var(--color-glass);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+.personaje-card-carrusel:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+}
+
+.personaje-imagen {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.personaje-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.personaje-card-carrusel:hover .personaje-imagen img {
+    transform: scale(1.1);
+}
+
+.personaje-card-carrusel .personaje-info {
+    padding: 1rem;
+}
+
+.personaje-card-carrusel .personaje-nombre {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.personaje-card-carrusel .personaje-descripcion {
+    color: var(--color-text-gray);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Contenedor principal para personajes por película */
+.personajes-por-pelicula {
+    display: block;
+    width: 100%;
+}
+
+/* Anular grid para personajes cuando están agrupados */
+.grid-container.personajes-por-pelicula {
+    display: block;
+    grid-template-columns: none;
+    padding: 0;
+}
+
+/* Cards especiales para timeline */
+.timeline-card {
+    background: var(--color-glass);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    border-color: var(--color-accent-orange);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+}
+
+.timeline-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.timeline-year {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 143, 0, 0.5);
+}
+
+/* Cards de galería para películas */
+.pelicula-gallery-card {
+    background: var(--color-glass);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.pelicula-gallery-card:hover {
+    border-color: var(--color-accent-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+}
+
+.pelicula-gallery-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.pelicula-gallery-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Contenedor para vehículos por película */
+.vehiculos-por-pelicula {
+    display: block;
+    width: 100%;
+}
+
+/* Carrusel de vehículos */
+.vehiculos-carrusel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+/* Cards del carrusel de vehículos */
+.vehiculo-card-carrusel {
+    background: var(--color-glass);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+.vehiculo-card-carrusel:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+}
+
+.vehiculo-imagen {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.vehiculo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.vehiculo-card-carrusel:hover .vehiculo-imagen img {
+    transform: scale(1.1);
+}
+
+.vehiculo-card-carrusel .vehiculo-info {
+    padding: 1rem;
+}
+
+.vehiculo-card-carrusel .vehiculo-nombre {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.vehiculo-card-carrusel .vehiculo-descripcion {
+    color: var(--color-text-gray);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Layout de cronología col-6 */
+.cronologia-imagen {
+    padding: 2rem;
+}
+
+.cronologia-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--color-accent-orange);
+    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+}
+
+.cronologia-info {
+    padding: 2rem;
+}
+
+.año-principal {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 20px rgba(255, 143, 0, 0.8);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid var(--color-accent-orange);
+}
+
+.info-section h4 {
+    color: var(--color-accent-orange);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-section h4 i {
+    font-size: 1rem;
+}
+
+.info-section p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+}

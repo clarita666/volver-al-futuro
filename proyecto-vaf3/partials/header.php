@@ -5,45 +5,102 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biblioteca Star Wars</title>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- codigo de JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- cUSTOM CSS -->
+    <!-- CUSTOM CSS UNIFICADO -->
     <link rel="stylesheet" href="css/estilos.css">
     <!-- FAVICON -->
     <link rel="shortcut icon" href="img/fav2.jpg" type="image/x-icon">
 </head>
 <body>
 <header>
-<!-- navegacion -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" style="background-color:#001BB7;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Biblioteca desconocido</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Logo / Marca -->
+    <a class="navbar-brand fw-bold text-light" href="index.php">
+      <i class="fas fa-film"></i> Volver al Futuro
+    </a>
+
+    <!-- Botón Hamburguesa -->
+    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="previews.php?categoria=personajes">desconocido</a>
+          <a class="nav-link text-light" href="previews.php?categoria=personajes">Personajes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="previews.php?categoria=naves">desconocido</a>
+          <a class="nav-link text-light" href="previews.php?categoria=peliculas">Películas</a>
         </li>
-       <li class="nav-item">
-          <a class="nav-link" href="previews.php?categoria=s???????">desconocido</a>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="previews.php?categoria=vehiculos">Vehículos</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="previews.php?categoria=????????">desconocido</a>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="previews.php?categoria=linea_tiempo">Línea de Tiempo</a>
         </li>
-      
+        <li class="nav-item">
+          <a class="nav-link text-light" href="previews.php?categoria=creditos">Créditos</a>
+        </li>
       </ul>
 
-
-      <form action="busqueda.php" method="GET" class="d-flex" role="search">
-        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <!-- Buscador -->
+      <form action="busqueda.php" method="GET" class="d-flex ms-3" role="search">
+        <input class="form-control me-2" name="q" type="search" placeholder="Buscar..." aria-label="Search"
+               style="background-color:#D8D8D8; border:none; border-radius:10px;">
+        <button class="btn" type="submit" style="background-color:#FF8F00; color:white; border-radius:10px;">
+          Buscar
+        </button>
       </form>
     </div>
   </div>
 </nav>
-</header>
+
+<!-- CSS extra -->
+<style>
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  /* Hover Naranja neón */
+  .nav-link:hover {
+    color: #FF8F00 !important;
+  }
+
+  /* Subrayado animado */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #FF8F00;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Toggler en blanco */
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' 
+      xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' 
+      stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+</style>
+

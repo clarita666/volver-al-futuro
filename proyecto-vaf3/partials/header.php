@@ -7,10 +7,10 @@
     <title>Biblioteca Star Wars</title>
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- codigo de JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- CUSTOM CSS UNIFICADO -->
     <link rel="stylesheet" href="css/estilos.css">
     <!-- FAVICON -->
@@ -23,7 +23,8 @@
   <div class="container-fluid">
     <!-- Logo / Marca -->
     <a class="navbar-brand fw-bold text-light" href="index.php">
-      <i class="fas fa-film"></i> Volver al Futuro
+      <img src="../img/logo_vaf.png" alt="Volver al Futuro" style="height: 40px; margin-right: 10px;">
+      Volver al Futuro
     </a>
 
     <!-- Botón Hamburguesa -->
@@ -98,7 +99,7 @@
     border: none;
   }
   .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' 
+    background-image: url("data:image/svg+xml;charset=utf8,%3CsvgviewBox='0 0 30 30' 
       xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' 
       stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }

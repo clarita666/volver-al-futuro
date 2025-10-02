@@ -10,8 +10,9 @@
       <a href="previews.php?categoria=creditos" class="footer-link">Créditos</a>
     </div>
 
-    <!-- Texto a la derecha -->
-    <div class="text-end text-white fw-bold">
+    <!-- Logo a la derecha -->
+    <div class="text-end text-white fw-bold d-flex align-items-center">
+      <img src="../img/logo_vaf.png" alt="Volver al Futuro" style="height: 30px; margin-right: 10px;">
       Volver al Futuro
     </div>
   </div>

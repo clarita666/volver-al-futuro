@@ -1,23 +1,26 @@
 /* Volver al Futuro - Estilos Unificados */
 
 /* Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap');
 
 /* Variables de colores */
 :root {
-    --color-primary: #1a1a2e;
-    --color-secondary: #16213e;
-    --color-accent-blue: #FF8F00;
+    --color-primary: #1a1a1a;
+    --color-secondary: #2d2d2d;
+    --color-tertiary: #7F8487;
     --color-accent-orange: #FF8F00;
+    --color-accent-red: #cf010b;
+    --color-accent-blue: #001BB7;
     --color-text-light: #FBFBFB;
     --color-text-gray: #E0E0E0;
-    --color-glass: rgba(255, 255, 255, 0.1);
-    --color-glass-border: rgba(255, 143, 0, 0.3);
+    --color-glass: rgba(127, 132, 135, 0.15);
+    --color-glass-border: rgba(255, 143, 0, 0.4);
+    --color-glass-dark: rgba(26, 26, 26, 0.8);
 }
 
 /* Estilos base */
 body {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: var(--color-text-light);
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
@@ -32,23 +35,74 @@ footer {
     right: 0 !important;
     width: 100% !important;
     z-index: 9999 !important;
+    background: linear-gradient(90deg, var(--color-accent-blue), var(--color-primary));
+    border-top: 2px solid var(--color-accent-orange);
+    box-shadow: 0 -5px 20px rgba(255, 143, 0, 0.3);
+}
+
+/* Navegación mejorada */
+.navbar {
+    background: linear-gradient(90deg, var(--color-glass-dark), var(--color-accent-blue)) !important;
+    border-bottom: 2px solid var(--color-accent-red);
+    box-shadow: 0 5px 20px rgba(207, 1, 11, 0.3);
+    backdrop-filter: blur(15px);
+}
+
+.navbar-brand {
+    color: var(--color-accent-orange) !important;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 143, 0, 0.5);
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-text-light) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-accent-orange) !important;
+    background: rgba(255, 143, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 143, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.navbar-toggler {
+    border-color: var(--color-accent-red);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FF8F00' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Títulos */
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0046FF;
+    text-shadow: 0 0 8px rgba(0, 70, 255, 0.7);
+}
+
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    color: var(--color-accent-blue);
+    color: var(--color-accent-orange);
     margin-bottom: 3rem;
     text-align: center;
-    text-shadow: 0 0 10px #FF8F00;
+    text-shadow: 0 0 10px var(--color-accent-orange);
 }
 
 h2 {
     font-family: 'Orbitron', sans-serif;
-    color: var(--color-accent-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #0046FF;
     margin: 3rem 2rem 1rem 2rem;
-    text-shadow: 0 0 8px rgba(255, 143, 0, 0.5);
+    text-shadow: 0 0 8px rgba(0, 70, 255, 0.7);
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--color-accent-orange);
 }
@@ -60,52 +114,42 @@ h3, h4, h5 {
 
 /* Cards y contenedores de cristal */
 .card, .personaje-card, .pelicula-detalle, .vehiculo-detalle, .evento-detalle, .personaje-detalle {
-    background: var(--color-glass);
+    background: var(--color-glass-dark);
     border-radius: 15px;
     padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
-    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-accent-red);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover, .personaje-card:hover {
     transform: translateY(-10px);
     border-color: var(--color-accent-orange);
-    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 143, 0, 0.4), 0 0 20px rgba(207, 1, 11, 0.2);
 }
 
 /* Grids */
-.personajes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-    padding: 0 2rem 2rem 2rem;
-}
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-    padding: 2rem;
-}
+
+
 
 /* Imágenes en cards */
 .personaje-card img, .card img {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 10px;
     object-fit: cover;
-    border: 3px solid var(--color-accent-blue);
+    border: 2px solid var(--color-accent-red);
     margin-bottom: 1rem;
     transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(207, 1, 11, 0.3);
 }
 
 .personaje-card:hover img, .card:hover img {
     border-color: var(--color-accent-orange);
-    box-shadow: 0 0 20px rgba(255, 143, 0, 0.5);
+    box-shadow: 0 0 25px rgba(255, 143, 0, 0.6), 0 0 10px rgba(0, 27, 183, 0.3);
 }
 
 /* Imágenes rectangulares para películas/vehículos */
@@ -135,13 +179,17 @@ h3, h4, h5 {
 
 /* Información */
 .info-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     margin: 0.5rem 0;
     font-size: 1.1rem;
 }
 
 .descripcion {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.7;
     margin-top: 2rem;
     text-align: justify;
     color: var(--color-text-gray);
@@ -155,22 +203,28 @@ h3, h4, h5 {
     padding: 10px 20px;
     border-radius: 10px;
     font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
 }
 
 .btn-volver:hover, .btn-custom:hover {
-    background-color: var(--color-accent-blue);
+    background-color: var(--color-accent-red);
     transform: translateY(-2px);
     color: white;
 }
 
 /* Nombres y títulos en cards */
 .personaje-nombre {
-    font-weight: 500;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
     color: var(--color-text-light);
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Contenedores principales */
@@ -279,7 +333,7 @@ h3, h4, h5 {
 }
 
 iframe {
-    border: 3px solid var(--color-accent-blue);
+    border: 3px solid var(--color-accent-red);
     border-radius: 8px;
 }
 
@@ -289,9 +343,9 @@ iframe {
     font-size: 1.2rem;
 }
 
-/* Cards del index con fondo naranja */
+/* Cards del index */
 .card {
-    background-color: var(--color-accent-orange);
+    background-color: #2d2d2d;
     color: white;
 }
 
@@ -315,14 +369,14 @@ iframe {
 
 /* Títulos en páginas de listado */
 .container > h1:first-child {
-    color: var(--color-accent-blue);
+    color: var(--color-accent-orange);
 }
 
 /* Secciones de información mejoradas */
 .descripcion-section, .datos-section {
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(127, 132, 135, 0.1);
     border-radius: 15px;
     border-left: 4px solid var(--color-accent-orange);
 }
@@ -419,7 +473,7 @@ iframe {
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(127, 132, 135, 0.1);
     border-radius: 10px;
     border: 1px solid rgba(255, 143, 0, 0.2);
     transition: all 0.3s ease;
@@ -461,11 +515,11 @@ iframe {
 /* Layout horizontal para personajes */
 .personajes-horizontal {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
     gap: 1.5rem;
     padding: 1rem 2rem 2rem 2rem;
     margin-bottom: 2rem;
-    scroll-behavior: smooth;
+    justify-content: flex-start;
 }
 
 .personajes-horizontal::-webkit-scrollbar {
@@ -473,7 +527,7 @@ iframe {
 }
 
 .personajes-horizontal::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(127, 132, 135, 0.2);
     border-radius: 10px;
 }
 
@@ -488,7 +542,7 @@ iframe {
     padding: 0;
     text-align: left;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid var(--color-accent-red);
     backdrop-filter: blur(10px);
     overflow: hidden;
     min-width: 250px;
@@ -574,49 +628,74 @@ iframe {
 /* Carrusel de personajes */
 .personajes-carrusel {
     position: relative;
-    overflow: hidden;
     padding: 0 2rem;
 }
 
-.carrusel-container {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 1rem;
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: var(--color-glass-dark);
+    border: 2px solid var(--color-accent-orange);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
-.carrusel-container::-webkit-scrollbar {
-    height: 6px;
+.carousel-control-prev {
+    left: -25px;
 }
 
-.carrusel-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.carousel-control-next {
+    right: -25px;
 }
 
-.carrusel-container::-webkit-scrollbar-thumb {
-    background: var(--color-accent-orange);
-    border-radius: 10px;
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 143, 0, 0.5);
+    border-color: var(--color-accent-red);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    filter: brightness(0) saturate(100%) invert(64%) sepia(98%) saturate(1000%) hue-rotate(15deg) brightness(101%) contrast(101%);
+}
+
+/* Carrusel de vehículos */
+.vehiculos-carrusel {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+}
+
+.carousel-item {
+    padding: 1rem 0;
 }
 
 /* Cards del carrusel */
 .personaje-card-carrusel {
-    background: var(--color-glass);
     border-radius: 12px;
+    background: #2d2d2d;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     min-width: 220px;
     max-width: 220px;
     flex-shrink: 0;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    backdrop-filter: blur(10px);
 }
 
 .personaje-card-carrusel:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent-orange);
-    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 15px #FF8F00;
 }
 
 .personaje-imagen {
@@ -637,7 +716,11 @@ iframe {
 }
 
 .personaje-card-carrusel .personaje-info {
-    padding: 1rem;
+    padding: 0.5rem;
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .personaje-card-carrusel .personaje-nombre {
@@ -650,9 +733,11 @@ iframe {
 }
 
 .personaje-card-carrusel .personaje-descripcion {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     color: var(--color-text-gray);
     font-size: 0.8rem;
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -671,53 +756,53 @@ iframe {
 
 /* Cards especiales para timeline */
 .timeline-card {
-    background: var(--color-glass);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    border: none;
+    background: #2d2d2d;
+    color: #FBFBFB;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    min-width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
 }
 
 .timeline-card:hover {
-    border-color: var(--color-accent-orange);
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 15px #FF8F00;
 }
 
 .timeline-card .card-img-top {
-    height: 200px;
+    height: 160px;
+    width: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+    border: none;
+}
+
+.timeline-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.timeline-card .card-body {
+    padding: 0.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timeline-year {
-    color: var(--color-accent-orange);
     font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    color: #FF8F00;
+    text-shadow: 0 0 6px #0046FF;
     margin: 0;
-    text-shadow: 0 0 10px rgba(255, 143, 0, 0.5);
-}
-
-/* Cards de galería para películas */
-.pelicula-gallery-card {
-    background: var(--color-glass);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.pelicula-gallery-card:hover {
-    border-color: var(--color-accent-orange);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
-}
-
-.pelicula-gallery-card .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.pelicula-gallery-card:hover .card-img-top {
-    transform: scale(1.05);
+    font-weight: 600;
 }
 
 /* Contenedor para vehículos por película */
@@ -726,30 +811,21 @@ iframe {
     width: 100%;
 }
 
-/* Carrusel de vehículos */
-.vehiculos-carrusel {
-    position: relative;
-    overflow: hidden;
-    padding: 0 2rem;
-}
-
 /* Cards del carrusel de vehículos */
 .vehiculo-card-carrusel {
-    background: var(--color-glass);
     border-radius: 12px;
+    background: #2d2d2d;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     min-width: 220px;
     max-width: 220px;
     flex-shrink: 0;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    backdrop-filter: blur(10px);
 }
 
 .vehiculo-card-carrusel:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent-orange);
-    box-shadow: 0 8px 25px rgba(255, 143, 0, 0.4);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 15px #FF8F00;
 }
 
 .vehiculo-imagen {
@@ -770,7 +846,11 @@ iframe {
 }
 
 .vehiculo-card-carrusel .vehiculo-info {
-    padding: 1rem;
+    padding: 0.5rem;
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .vehiculo-card-carrusel .vehiculo-nombre {
@@ -783,9 +863,11 @@ iframe {
 }
 
 .vehiculo-card-carrusel .vehiculo-descripcion {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     color: var(--color-text-gray);
     font-size: 0.8rem;
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -820,7 +902,7 @@ iframe {
 .info-section {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(127, 132, 135, 0.1);
     border-radius: 10px;
     border-left: 4px solid var(--color-accent-orange);
 }
@@ -843,4 +925,36 @@ iframe {
     color: var(--color-text-light);
     line-height: 1.6;
     margin: 0;
+}
+
+/* Layout simple para películas */
+.pelicula-section-simple {
+    margin-bottom: 4rem;
+}
+
+a, .pelicula-titulo-link {
+    color: #FF8F00;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover, .pelicula-titulo-link:hover {
+    color: #0046FF;
+    text-shadow: 0 0 8px #0046FF;
+}
+
+.pelicula-img-simple {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #7F8487, #D8D8D8);
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pelicula-img-simple:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 15px #FF8F00;
 }

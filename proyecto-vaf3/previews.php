@@ -37,10 +37,8 @@ $config = [
 $current = $config[$categoria] ?? $config['personajes'];
 ?>
 
-
-
 <div class="container">
-    <h1><?= $current['titulo'] ?></h1>
+    <h1 class="section-title text-center mb-4"><?= strtoupper($current['titulo']) ?></h1>
 
     <?php if ($categoria === 'creditos'): ?>
         <div class="creditos-content">
@@ -57,7 +55,7 @@ $current = $config[$categoria] ?? $config['personajes'];
                 Dirigida por Robert Zemeckis</p>
         </div>
     <?php else: ?>
-        <div class="grid-container">
+        <div class="container-fluid">
             <?php
             // Obtener datos de la base de datos
             if ($categoria === 'personajes') {
@@ -71,24 +69,55 @@ $current = $config[$categoria] ?? $config['personajes'];
             ?>
                         <div class="pelicula-section">
                             <h2><?= $pelicula['titulo'] ?></h2>
-                            <div class="personajes-carrusel">
-                                <div class="carrusel-container">
-                                    <?php foreach ($personajes_pelicula as $p): ?>
-                                        <a href="personajes_info.php?id=<?= $p['id_personaje'] ?>" class="text-decoration-none">
-                                            <div class="personaje-card-carrusel">
-                                                <div class="personaje-imagen">
-                                                    <img src="../img/pruebaenblanco.png" alt="<?= $p['nombre'] ?>">
-                                                </div>
-                                                <div class="personaje-info">
-                                                    <h6 class="personaje-nombre"><?= $p['nombre'] ?></h6>
-                                                    <?php if ($p['descripcion']): ?>
-                                                        <p class="personaje-descripcion"><?= substr($p['descripcion'], 0, 60) ?>...</p>
-                                                    <?php endif; ?>
-                                                </div>
+                            <div class="personajes-horizontal">
+                                <?php foreach ($personajes_pelicula as $p): ?>
+                                    <a href="personajes_info.php?id=<?= $p['id_personaje'] ?>" class="text-decoration-none">
+                                        <div class="personaje-card-carrusel">
+                                            <div class="personaje-imagen">
+                                                <img src="../img/pruebaenblanco.png" alt="<?= $p['nombre'] ?>">
                                             </div>
-                                        </a>
-                                    <?php endforeach; ?>
-                                </div>
+                                            <div class="personaje-info">
+                                                <h6 class="personaje-nombre"><?= $p['nombre'] ?></h6>
+                                                <?php if ($p['descripcion']): ?>
+                                                    <p class="personaje-descripcion"><?= substr($p['descripcion'], 0, 60) ?>...</p>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php
+                    endif;
+                endforeach;
+                echo '</div>';
+            } elseif ($categoria === 'vehiculos') {
+                // Layout especial para vehículos agrupados por película
+                echo '<div class="vehiculos-por-pelicula">';
+                $peliculas = listar_todo($conn, 'peliculas');
+                foreach ($peliculas as $pelicula):
+                    // Obtener vehículos de esta película
+                    $vehiculos_pelicula = $conn->query("SELECT * FROM vehiculos WHERE id_pelicula = " . $pelicula['id_pelicula'])->fetch_all(MYSQLI_ASSOC);
+                    if (!empty($vehiculos_pelicula)):
+            ?>
+                        <div class="pelicula-section">
+                            <h2><?= $pelicula['titulo'] ?></h2>
+                            <div class="personajes-horizontal">
+                                <?php foreach ($vehiculos_pelicula as $v): ?>
+                                    <a href="vehiculos_info.php?id=<?= $v['id_vehiculo'] ?>" class="text-decoration-none">
+                                        <div class="vehiculo-card-carrusel">
+                                            <div class="vehiculo-imagen">
+                                                <img src="../img/pruebaenblanco.png" alt="<?= $v['nombre'] ?>">
+                                            </div>
+                                            <div class="vehiculo-info">
+                                                <h6 class="vehiculo-nombre"><?= $v['nombre'] ?></h6>
+                                                <?php if ($v['descripcion']): ?>
+                                                    <p class="vehiculo-descripcion"><?= substr($v['descripcion'], 0, 60) ?>...</p>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     <?php
@@ -123,102 +152,31 @@ $current = $config[$categoria] ?? $config['personajes'];
                     endforeach;
                     echo '</div>';
                 } elseif ($categoria === 'peliculas') {
-                    // Layout especial para películas con galería
+                    // Layout simple para películas
                     foreach ($items as $item):
                         $id = $item['id_pelicula'];
                         $link = $current['info_page'] . "?id=" . $id;
                 ?>
-                        <div class="pelicula-section">
-                            <h2><?= $item['titulo'] ?></h2>
+                        <div class="pelicula-section-simple col-12">
+                            <h2><a href="<?= $link ?>" class="pelicula-titulo-link"><?= $item['titulo'] ?></a></h2>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
-                                    <a href="<?= $link ?>" class="text-decoration-none">
-                                        <div class="card pelicula-gallery-card">
-                                            <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="card-img-top">
-                                        </div>
-                                    </a>
+                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <?php if ($item['galeria_imagen1']): ?>
                                 <div class="col-md-3 mb-3">
-                                    <a href="<?= $link ?>" class="text-decoration-none">
-                                        <div class="card pelicula-gallery-card">
-                                            <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="card-img-top">
-                                        </div>
-                                    </a>
+                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <?php endif; ?>
-                                <?php if ($item['galeria_imagen2']): ?>
                                 <div class="col-md-3 mb-3">
-                                    <a href="<?= $link ?>" class="text-decoration-none">
-                                        <div class="card pelicula-gallery-card">
-                                            <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="card-img-top">
-                                        </div>
-                                    </a>
+                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <?php endif; ?>
-                                <?php if ($item['galeria_imagen3']): ?>
                                 <div class="col-md-3 mb-3">
-                                    <a href="<?= $link ?>" class="text-decoration-none">
-                                        <div class="card pelicula-gallery-card">
-                                            <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="card-img-top">
-                                        </div>
-                                    </a>
+                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach;
-                } elseif ($categoria === 'vehiculos') {
-                    // Layout especial para vehículos agrupados por película
-                    echo '<div class="vehiculos-por-pelicula">';
-                    $peliculas = listar_todo($conn, 'peliculas');
-                    foreach ($peliculas as $pelicula):
-                        // Obtener vehículos de esta película
-                        $vehiculos_pelicula = $conn->query("SELECT * FROM vehiculos WHERE id_pelicula = " . $pelicula['id_pelicula'])->fetch_all(MYSQLI_ASSOC);
-                        if (!empty($vehiculos_pelicula)):
-                ?>
-                            <div class="pelicula-section">
-                                <h2><?= $pelicula['titulo'] ?></h2>
-                                <div class="vehiculos-carrusel">
-                                    <div class="carrusel-container">
-                                        <?php foreach ($vehiculos_pelicula as $v): ?>
-                                            <a href="vehiculos_info.php?id=<?= $v['id_vehiculo'] ?>" class="text-decoration-none">
-                                                <div class="vehiculo-card-carrusel">
-                                                    <div class="vehiculo-imagen">
-                                                        <img src="../img/pruebaenblanco.png" alt="<?= $v['nombre'] ?>">
-                                                    </div>
-                                                    <div class="vehiculo-info">
-                                                        <h6 class="vehiculo-nombre"><?= $v['nombre'] ?></h6>
-                                                        <?php if ($v['descripcion']): ?>
-                                                            <p class="vehiculo-descripcion"><?= substr($v['descripcion'], 0, 60) ?>...</p>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php
-                        endif;
-                    endforeach;
-                    echo '</div>';
-                } else {
-                    // Layout normal para otras categorías
-                    foreach ($items as $item):
-                        $nombre = $item['nombre'];
-                        $id = $item['id_vehiculo'];
-                        $link = $current['info_page'] . "?id=" . $id;
-                        ?>
-                        <a href="<?= $link ?>" class="text-decoration-none">
-                            <div class="card">
-                                <img src="../img/pruebaenblanco.png" alt="<?= $nombre ?>">
-                                <h5><?= $nombre ?></h5>
-                            </div>
-                        </a>
-                    <?php endforeach;
-                } ?>
-            <?php } ?>
+                }
+            } ?>
         </div>
     <?php endif; ?>
 </div>

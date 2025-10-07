@@ -105,8 +105,9 @@ $current = $config[$categoria] ?? $config['personajes'];
             ?>
                         <div class="pelicula-section">
                             <h2><?= $pelicula['titulo'] ?></h2>
-                            <div class="personajes-horizontal">
+                            <div class="row g-3">
                                 <?php foreach ($personajes_pelicula as $p): ?>
+                                <div class="col-md-4">
                                     <a href="personajes_info.php?id=<?= $p['id_personaje'] ?>" class="text-decoration-none">
                                         <div class="personaje-card-carrusel">
                                             <div class="personaje-imagen">
@@ -120,6 +121,7 @@ $current = $config[$categoria] ?? $config['personajes'];
                                             </div>
                                         </div>
                                     </a>
+                                </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -138,8 +140,9 @@ $current = $config[$categoria] ?? $config['personajes'];
             ?>
                         <div class="pelicula-section">
                             <h2><?= $pelicula['titulo'] ?></h2>
-                            <div class="personajes-horizontal">
+                            <div class="row g-3">
                                 <?php foreach ($vehiculos_pelicula as $v): ?>
+                                <div class="col-md-4">
                                     <a href="vehiculos_info.php?id=<?= $v['id_vehiculo'] ?>" class="text-decoration-none">
                                         <div class="vehiculo-card-carrusel">
                                             <div class="vehiculo-imagen">
@@ -153,6 +156,7 @@ $current = $config[$categoria] ?? $config['personajes'];
                                             </div>
                                         </div>
                                     </a>
+                                </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -220,49 +224,27 @@ $current = $config[$categoria] ?? $config['personajes'];
                     <div class="datos-curiosos" style="background: rgba(26, 26, 26, 0.8); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
                         <h4 style="color: #FF8F00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem;">Datos Curiosos</h4>
                         
-                        <?php if ($categoria === 'personajes'): ?>
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">¿Sabías que...?</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Michael J. Fox no era la primera opción para Marty McFly.</p>
-                            </div>
-                            
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Dato Curioso</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Doc Brown se inspiró en Albert Einstein y Leopold Stokowski.</p>
-                            </div>
-                        <?php elseif ($categoria === 'vehiculos'): ?>
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">DeLorean DMC-12</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Fue elegido porque parecía una nave espacial y tenía puertas de gaviota.</p>
-                            </div>
-                            
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">88 mph</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Esta velocidad se eligió porque se veía bien en el velocímetro digital.</p>
-                            </div>
-                        <?php elseif ($categoria === 'peliculas'): ?>
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Trilogía Épica</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">La segunda y tercera película se filmaron consecutivamente.</p>
-                            </div>
-                            
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Fecha Icónica</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">21 de octubre de 2015 se volvió una fecha mundialmente famosa.</p>
-                            </div>
-                        <?php else: ?>
-                            <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                                <img src="../img/pruebaenblanco.png" alt="Dato curioso" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                                <h6 style="color: #FF8F00; font-size: 0.9rem;">Viajes en el Tiempo</h6>
-                                <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">La saga abarca desde 1885 hasta 2015, un total de 130 años.</p>
-                            </div>
-                        <?php endif; ?>
+                        <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                            <img src="../img/Infografia/Infografías y un video sobre Volver al Futuro para tus favoritos.jpg" alt="Infografía completa" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Infografía Completa</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Descubre todos los datos fascinantes y curiosidades sobre la trilogía de Volver al Futuro.</p>
+                        </div>
+                        
+                        <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">DeLorean DMC-12</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">El DeLorean fue elegido como máquina del tiempo porque parecía una nave espacial y tenía puertas de gaviota únicas. Solo se fabricaron 9,000 unidades de este auto exótico que se convirtió en un ícono del cine.</p>
+                        </div>
+                        
+                        <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                            <img src="../img/Infografia/Volver_.jpg" alt="Datos especiales" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Datos Especiales</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Información detallada sobre los elementos más importantes de la saga.</p>
+                        </div>
+                        
+                        <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">88 mph - La Velocidad Mágica</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Esta velocidad se eligió porque se veía bien en el velocímetro digital del DeLorean y sonaba futurista. En el guion original era 65 mph, pero se cambió porque no era lo suficientemente espectacular para el cine.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -270,4 +252,7 @@ $current = $config[$categoria] ?? $config['personajes'];
     <?php endif; ?>
 </div>
 
+
+
 <?php require "partials/footer.php"; ?>
+

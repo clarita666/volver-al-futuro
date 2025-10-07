@@ -21,35 +21,35 @@
 <section class="container my-5">
   <div class="row text-center">
     <div class="col-md-3">
-      <div class="card">
+      <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=personajes">
-          <img src="img/personajes.jpg" class="card-img-top" alt="Personajes">
+          <img src="../img/cards-inicio/personajes.jpg" class="card-img-top" alt="Personajes">
         </a>
         <div class="card-body"><h5>Personajes</h5></div>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card">
+      <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=peliculas">
-          <img src="img/peliculas.jpg" class="card-img-top" alt="Películas">
+          <img src="../img/cards-inicio/peliculas.jpg" class="card-img-top" alt="Películas">
         </a>
         <div class="card-body"><h5>Películas</h5></div>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card">
+      <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=vehiculos">
-          <img src="img/vehiculos.jpg" class="card-img-top" alt="Vehículos">
+          <img src="../img/cards-inicio/vehiculos.webp" class="card-img-top" alt="Vehículos">
         </a>
         <div class="card-body"><h5>Vehículos</h5></div>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card">
+      <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=linea_tiempo">
-          <img src="img/linea_tiempo.jpg" class="card-img-top" alt="Línea de Tiempo">
+          <img src="../img/cards-inicio/cronologia.jpg" class="card-img-top" alt="Línea de Tiempo">
         </a>
-        <div class="card-body"><h5>Línea de Tiempo</h5></div>
+        <div class="card-body"><h5>Cronologia</h5></div>
       </div>
     </div>
   </div>

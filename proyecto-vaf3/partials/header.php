@@ -52,6 +52,9 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="previews.php?categoria=creditos">Créditos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="extras.php">Extras</a>
+        </li>
       </ul>
 
       <!-- Buscador -->

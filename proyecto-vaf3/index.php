@@ -19,8 +19,8 @@
 
 <!-- ENLACES CON IMAGENES -->
 <section class="container my-5">
-  <div class="row text-center">
-    <div class="col-md-3">
+  <div class="row text-center mb-4">
+    <div class="col-md-4">
       <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=personajes">
           <img src="../img/cards-inicio/personajes.jpg" class="card-img-top" alt="Personajes">
@@ -28,7 +28,7 @@
         <div class="card-body"><h5>Personajes</h5></div>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=peliculas">
           <img src="../img/cards-inicio/peliculas.jpg" class="card-img-top" alt="Películas">
@@ -36,7 +36,7 @@
         <div class="card-body"><h5>Películas</h5></div>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=vehiculos">
           <img src="../img/cards-inicio/vehiculos.webp" class="card-img-top" alt="Vehículos">
@@ -44,12 +44,22 @@
         <div class="card-body"><h5>Vehículos</h5></div>
       </div>
     </div>
-    <div class="col-md-3">
+  </div>
+  <div class="row text-center justify-content-center">
+    <div class="col-md-4">
       <div class="card" style="background-color: #FF8F00;">
         <a href="previews.php?categoria=linea_tiempo">
           <img src="../img/cards-inicio/cronologia.jpg" class="card-img-top" alt="Línea de Tiempo">
         </a>
-        <div class="card-body"><h5>Cronologia</h5></div>
+        <div class="card-body"><h5>Cronología</h5></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="background-color: #FF8F00;">
+        <a href="extras.php">
+          <img src="../img/cards-inicio/cronologia.jpg" class="card-img-top" alt="Extras">
+        </a>
+        <div class="card-body"><h5>Extras</h5></div>
       </div>
     </div>
   </div>

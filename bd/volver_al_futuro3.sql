@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2025 a las 03:42:48
+-- Tiempo de generación: 07-10-2025 a las 21:38:52
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,6 +32,19 @@ CREATE TABLE `creditos` (
   `nombre` varchar(100) NOT NULL,
   `rol` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `creditos`
+--
+
+INSERT INTO `creditos` (`id_credito`, `nombre`, `rol`) VALUES
+(1, 'Cynthia de Mey', 'Diseñador/a de Pagina Web'),
+(2, 'Angela Choque', 'Diseñador/a de Pagina Web'),
+(3, 'Miriam Ferreiro', 'Diseñador/a de Pagina Web'),
+(4, 'Silvia', 'Diseñador/a de Pagina Web'),
+(5, 'Clara Iriarte', 'Programadora'),
+(6, 'Lara Devoto', 'Programador/a'),
+(7, 'Miguel Escobar', 'Programador/a');
 
 -- --------------------------------------------------------
 
@@ -94,7 +107,10 @@ CREATE TABLE `peliculas` (
 INSERT INTO `peliculas` (`id_pelicula`, `titulo`, `director`, `productor`, `escritor`, `resumen`, `imagen`, `url_video1`, `url_video2`, `url_video3`, `galeria_imagen1`, `galeria_imagen2`, `galeria_imagen3`) VALUES
 (1, 'Volver al Futuro (1985)', 'Robert Zemeckis', 'Bob Gale, Neil Canton', 'Robert Zemeckis, Bob Gale', 'Marty McFly, un adolescente de los años 80, viaja accidentalmente al año 1955 en un DeLorean modificado por el excéntrico científico Doc Brown. Allí se encuentra con sus futuros padres e involuntariamente altera el pasado, poniendo en peligro su propia existencia.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, 'Volver al Futuro II (1989)', 'Robert Zemeckis', 'Bob Gale, Neil Canton', 'Robert Zemeckis, Bob Gale', 'Marty y Doc viajan al futuro del año 2015 para evitar que el hijo de Marty arruine su vida. Sin embargo, Biff Tannen se apodera de un almanaque deportivo y cambia la historia, convirtiéndose en un magnate corrupto. Ahora deben regresar a 1955 para restaurar la línea temporal.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'Volver al Futuro III (1990)', 'Robert Zemeckis', 'Bob Gale, Neil Canton', 'Robert Zemeckis, Bob Gale', 'Tras los eventos de la segunda película, Marty viaja al Viejo Oeste de 1885 para rescatar a Doc Brown, que quedó atrapado en esa época. Allí descubren nuevos desafíos mientras enfrentan a Buford “Mad Dog” Tannen y buscan una forma de regresar al futuro sin combustible para el DeLorean.', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(3, 'Volver al Futuro III (1990)', 'Robert Zemeckis', 'Bob Gale, Neil Canton', 'Robert Zemeckis, Bob Gale', 'Tras los eventos de la segunda película, Marty viaja al Viejo Oeste de 1885 para rescatar a Doc Brown, que quedó atrapado en esa época. Allí descubren nuevos desafíos mientras enfrentan a Buford “Mad Dog” Tannen y buscan una forma de regresar al futuro sin combustible para el DeLorean.', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, '', NULL, NULL, NULL, NULL, NULL, 'https://www.youtube.com/watch?v=qvsgGtivCgs', 'https://www.youtube.com/watch?v=HsvqzJ3U9jI', 'https://www.youtube.com/watch?v=mdPo4yLxNok', NULL, NULL, NULL),
+(8, '', NULL, NULL, NULL, NULL, NULL, 'https://www.youtube.com/watch?v=MdENmefJRpw', 'https://www.youtube.com/watch?v=keNwJvFIlWQ', 'https://www.youtube.com/watch?v=GfPg5LjGYz8', NULL, NULL, NULL),
+(9, '', NULL, NULL, NULL, NULL, NULL, 'https://www.youtube.com/watch?v=3C8c3EoEfw4', 'https://www.youtube.com/watch?v=qvsgGtivCgs', 'https://www.youtube.com/watch?v=fWokvPqM0X4', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -229,7 +245,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `creditos`
 --
 ALTER TABLE `creditos`
-  MODIFY `id_credito` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_credito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `linea_tiempo`
@@ -241,7 +257,7 @@ ALTER TABLE `linea_tiempo`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pelicula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `personajes`

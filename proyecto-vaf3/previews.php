@@ -111,13 +111,10 @@ $current = $config[$categoria] ?? $config['personajes'];
                                     <a href="personajes_info.php?id=<?= $p['id_personaje'] ?>" class="text-decoration-none">
                                         <div class="personaje-card-carrusel">
                                             <div class="personaje-imagen">
-                                                <img src="../img/pruebaenblanco.png" alt="<?= $p['nombre'] ?>">
+                                                <img src="<?= $p['imagen_principal'] ?>" alt="<?= $p['nombre'] ?>">
                                             </div>
-                                            <div class="personaje-info">
+                                            <div class="personaje-info" style="padding: 1rem; text-align: center;">
                                                 <h6 class="personaje-nombre"><?= $p['nombre'] ?></h6>
-                                                <?php if ($p['descripcion']): ?>
-                                                    <p class="personaje-descripcion"><?= substr($p['descripcion'], 0, 60) ?>...</p>
-                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </a>
@@ -146,13 +143,10 @@ $current = $config[$categoria] ?? $config['personajes'];
                                     <a href="vehiculos_info.php?id=<?= $v['id_vehiculo'] ?>" class="text-decoration-none">
                                         <div class="vehiculo-card-carrusel">
                                             <div class="vehiculo-imagen">
-                                                <img src="../img/pruebaenblanco.png" alt="<?= $v['nombre'] ?>">
+                                                <img src="<?= $v['imagen_principal'] ?>" alt="<?= $v['nombre'] ?>">
                                             </div>
-                                            <div class="vehiculo-info">
+                                            <div class="vehiculo-info" style="padding: 1rem; text-align: center;">
                                                 <h6 class="vehiculo-nombre"><?= $v['nombre'] ?></h6>
-                                                <?php if ($v['descripcion']): ?>
-                                                    <p class="vehiculo-descripcion"><?= substr($v['descripcion'], 0, 60) ?>...</p>
-                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </a>
@@ -181,7 +175,7 @@ $current = $config[$categoria] ?? $config['personajes'];
                         <div class="col-md-3 mb-4">
                             <a href="<?= $link ?>" class="text-decoration-none">
                                 <div class="card timeline-card">
-                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['año'] ?>" class="card-img-top">
+                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['año'] ?>" class="card-img-top">
                                     <div class="card-body text-center">
                                         <h4 class="timeline-year"><?= $item['año'] ?></h4>
                                     </div>
@@ -201,16 +195,16 @@ $current = $config[$categoria] ?? $config['personajes'];
                             <h2><a href="<?= $link ?>" class="pelicula-titulo-link"><?= $item['titulo'] ?></a></h2>
                             <div class="row">
                                 <div class="col-md-3 mb-3">
-                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <img src="../img/pruebaenblanco.png" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
                             </div>
                         </div>

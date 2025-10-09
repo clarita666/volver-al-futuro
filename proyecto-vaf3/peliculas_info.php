@@ -22,7 +22,7 @@ if (!$pelicula) {
 
     <div class="pelicula-detalle">
         <div class="pelicula-header">
-            <img src="../img/pruebaenblanco.png" alt="<?= $pelicula['titulo'] ?>" class="pelicula-img">
+            <img src="<?= $pelicula['imagen_principal'] ?>" alt="<?= $pelicula['titulo'] ?>" class="pelicula-img">
             <div class="pelicula-info">
                 <h2><?= $pelicula['titulo'] ?></h2>
                 <div class="info-item"><strong>Director:</strong> <?= $pelicula['director'] ?></div>

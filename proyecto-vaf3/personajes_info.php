@@ -20,7 +20,7 @@ if (!$personaje) {
 
     <div class="personaje-detalle">
         <div class="personaje-header">
-            <img src="../img/pruebaenblanco.png" alt="<?= $personaje['nombre'] ?>" class="personaje-img">
+            <img src="<?= $personaje['imagen_principal'] ?>" alt="<?= $personaje['nombre'] ?>" class="personaje-img">
             <div class="personaje-info">
                 <h2><?= $personaje['nombre'] ?></h2>
                 <?php if ($personaje['fecha_nacimiento']): ?>

@@ -22,7 +22,7 @@ if (!$vehiculo) {
 
     <div class="vehiculo-detalle">
         <div class="vehiculo-header">
-            <img src="../img/pruebaenblanco.png" alt="<?= $vehiculo['nombre'] ?>" class="vehiculo-img">
+            <img src="<?= $vehiculo['imagen_principal'] ?>" alt="<?= $vehiculo['nombre'] ?>" class="vehiculo-img">
             <div class="vehiculo-info">
                 <h2><?= $vehiculo['nombre'] ?></h2>
                 <div class="info-item"><strong>Año:</strong> <?= $vehiculo['año'] ?></div>

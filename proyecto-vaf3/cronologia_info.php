@@ -23,7 +23,7 @@ if (!$evento) {
     <div class="row">
         <div class="col-md-6">
             <div class="cronologia-imagen">
-                <img src="../img/pruebaenblanco.png" alt="<?= $evento['año'] ?>" class="img-fluid cronologia-img">
+                <img src="<?= $evento['imagen_principal'] ?>" alt="<?= $evento['año'] ?>" class="img-fluid cronologia-img">
             </div>
         </div>
         

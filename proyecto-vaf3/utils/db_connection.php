@@ -4,7 +4,7 @@
 $host = "localhost"; 
 $user = "root";
 $password = "";
-$database = "volver_al_futuro3";
+$database = "volver_al_futuro1";
 
 try {
     // Primero conectar sin base de datos para crearla si no existe

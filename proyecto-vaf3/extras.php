@@ -91,18 +91,73 @@ require "partials/header.php";
     <section class="mb-5">
         <h2 style="color: #FF8F00; text-align: center; margin-bottom: 2rem;">Galería de Imágenes</h2>
         <div class="row g-3">
-            <div class='col-md-4 col-lg-3'>
-                <img src='../img/Pelicula/Back to the Future.jpg' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen("../img/Pelicula/Back to the Future.jpg")'>
-            </div>
-            <div class='col-md-4 col-lg-3'>
-                <img src='../img/Pelicula/Back to the Future 2.jpg' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen("../img/Pelicula/Back to the Future 2.jpg")'>
-            </div>
-            <div class='col-md-4 col-lg-3'>
-                <img src='../img/Pelicula/Back to the Future 3.jpg' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen("../img/Pelicula/Back to the Future 3.jpg")'>
-            </div>
-            <div class='col-md-4 col-lg-3'>
-                <img src='../img/Vehiculos/de LOREAN.jpg' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen("../img/Vehiculos/de LOREAN.jpg")'>
-            </div>
+            <?php
+            // Obtener todas las imágenes de películas
+            $sql_peliculas = "SELECT titulo, imagen_principal, galeria_imagen1, galeria_imagen2, galeria_imagen3 FROM peliculas";
+            $result_peliculas = $conn->query($sql_peliculas);
+            
+            if ($result_peliculas->num_rows > 0) {
+                while($row = $result_peliculas->fetch_assoc()) {
+                    // Imagen principal
+                    if (!empty($row['imagen_principal'])) {
+                        echo "<div class='col-md-3 mb-3'>";
+                        echo "<img src='{$row['imagen_principal']}' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen(\"{$row['imagen_principal']}\")'>";
+                        echo "</div>";
+                    }
+                    
+                    // Imágenes de galería
+                    for ($i = 1; $i <= 3; $i++) {
+                        if (!empty($row["galeria_imagen$i"])) {
+                            echo "<div class='col-md-3 mb-3'>";
+                            echo "<img src='{$row["galeria_imagen$i"]}' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen(\"{$row["galeria_imagen$i"]}\")'>";
+                            echo "</div>";
+                        }
+                    }
+                }
+            }
+            
+            // Obtener todas las imágenes de personajes
+            $sql_personajes = "SELECT nombre, imagen_principal FROM personajes";
+            $result_personajes = $conn->query($sql_personajes);
+            
+            if ($result_personajes->num_rows > 0) {
+                while($row = $result_personajes->fetch_assoc()) {
+                    if (!empty($row['imagen_principal'])) {
+                        echo "<div class='col-md-3 mb-3'>";
+                        echo "<img src='{$row['imagen_principal']}' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen(\"{$row['imagen_principal']}\")'>";
+                        echo "</div>";
+                    }
+                }
+            }
+            
+            // Obtener todas las imágenes de vehículos
+            $sql_vehiculos = "SELECT nombre, imagen_principal FROM vehiculos";
+            $result_vehiculos = $conn->query($sql_vehiculos);
+            
+            if ($result_vehiculos->num_rows > 0) {
+                while($row = $result_vehiculos->fetch_assoc()) {
+                    if (!empty($row['imagen_principal'])) {
+                        echo "<div class='col-md-3 mb-3'>";
+                        echo "<img src='{$row['imagen_principal']}' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen(\"{$row['imagen_principal']}\")'>";
+                        echo "</div>";
+                    }
+                }
+            }
+            
+            // Obtener todas las imágenes de línea de tiempo
+            $sql_timeline = "SELECT titulo_evento, imagen_principal FROM linea_tiempo";
+            $result_timeline = $conn->query($sql_timeline);
+            
+            if ($result_timeline->num_rows > 0) {
+                while($row = $result_timeline->fetch_assoc()) {
+                    if (!empty($row['imagen_principal'])) {
+                        echo "<div class='col-md-3 mb-3'>";
+                        echo "<img src='{$row['imagen_principal']}' class='img-fluid' style='border-radius: 10px; cursor: pointer; height: 200px; width: 100%; object-fit: cover; border: 2px solid #FF8F00;' onclick='verImagen(\"{$row['imagen_principal']}\")'>";
+                        echo "</div>";
+                    }
+                }
+            }
+            ?>
         </div>
     </section>
 
@@ -112,6 +167,7 @@ require "partials/header.php";
         <div class="row g-4">
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
+                    <img src='../img/Comics/portada_2015.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada 2015'>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Back to the Future (2015)</h5>
                     </div>
@@ -123,6 +179,7 @@ require "partials/header.php";
             </div>
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
+                    <img src='../img/Comics/portada_1991.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada 1991'>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Back to the Future 1991</h5>
                     </div>
@@ -137,6 +194,7 @@ require "partials/header.php";
             </div>
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
+                    <img src='../img/Comics/portada_biff.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada Biff'>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Biff to the Future</h5>
                     </div>

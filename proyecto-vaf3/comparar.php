@@ -1,59 +1,65 @@
 <?php
 require_once "utils/db_connection.php";
-require_once "utils/funciones.php";
 
-$tipo = $_POST['tipo'] ?? '';
-$id1 = $_POST['id1'] ?? '';
-$id2 = $_POST['id2'] ?? '';
+if ($_POST['tipo'] == 'personajes') {
+    $id1 = $_POST['id1'];
+    $id2 = $_POST['id2'];
+    
+    $sql = "SELECT * FROM personajes WHERE id_personaje IN ($id1, $id2)";
+    $result = $conn->query($sql);
+    
+    $personajes = [];
+    while($row = $result->fetch_assoc()) {
+        $personajes[] = $row;
+    }
+    
+    if (count($personajes) == 2) {
+        echo "<div class='row mt-3'>";
+        foreach($personajes as $p) {
+            echo "<div class='col-6'>";
+            echo "<div class='card' style='background: rgba(26, 26, 26, 0.9); border: 1px solid #FF8F00;'>";
+            if (!empty($p['imagen_principal'])) {
+                echo "<img src='{$p['imagen_principal']}' class='card-img-top' style='height: 200px; object-fit: cover;'>";
+            }
+            echo "<div class='card-body'>";
+            echo "<h5 style='color: #FF8F00;'>{$p['nombre']}</h5>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Edad:</strong> {$p['edad']}</p>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Ocupación:</strong> {$p['ocupacion']}</p>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Descripción:</strong> " . substr($p['descripcion'], 0, 100) . "...</p>";
+            echo "</div></div></div>";
+        }
+        echo "</div>";
+    }
+}
 
-if($tipo == 'personajes') {
-    $p1 = categoria_particular($conn, 'personajes', $id1)[0];
-    $p2 = categoria_particular($conn, 'personajes', $id2)[0];
+if ($_POST['tipo'] == 'vehiculos') {
+    $id1 = $_POST['id1'];
+    $id2 = $_POST['id2'];
     
-    echo "<div class='row mt-3'>
-            <div class='col-6'>
-                <div class='card' style='background: rgba(127, 132, 135, 0.1); border: 1px solid #FF8F00;'>
-                    <div class='card-body text-center'>
-                        <img src='../img/pruebaenblanco.png' style='width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #FF8F00;'>
-                        <h5 style='color: #FF8F00; margin: 1rem 0;'>{$p1['nombre']}</h5>
-                        <p style='color: #E0E0E0; font-size: 0.9rem;'>" . substr($p1['descripcion'], 0, 100) . "...</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-6'>
-                <div class='card' style='background: rgba(127, 132, 135, 0.1); border: 1px solid #FF8F00;'>
-                    <div class='card-body text-center'>
-                        <img src='../img/pruebaenblanco.png' style='width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #FF8F00;'>
-                        <h5 style='color: #FF8F00; margin: 1rem 0;'>{$p2['nombre']}</h5>
-                        <p style='color: #E0E0E0; font-size: 0.9rem;'>" . substr($p2['descripcion'], 0, 100) . "...</p>
-                    </div>
-                </div>
-            </div>
-          </div>";
-          
-} elseif($tipo == 'vehiculos') {
-    $v1 = categoria_particular($conn, 'vehiculos', $id1)[0];
-    $v2 = categoria_particular($conn, 'vehiculos', $id2)[0];
+    $sql = "SELECT * FROM vehiculos WHERE id_vehiculo IN ($id1, $id2)";
+    $result = $conn->query($sql);
     
-    echo "<div class='row mt-3'>
-            <div class='col-6'>
-                <div class='card' style='background: rgba(127, 132, 135, 0.1); border: 1px solid #FF8F00;'>
-                    <div class='card-body text-center'>
-                        <img src='../img/pruebaenblanco.png' style='width: 150px; height: 100px; object-fit: cover; border-radius: 10px; border: 2px solid #FF8F00;'>
-                        <h5 style='color: #FF8F00; margin: 1rem 0;'>{$v1['nombre']}</h5>
-                        <p style='color: #E0E0E0; font-size: 0.9rem;'>" . substr($v1['descripcion'], 0, 100) . "...</p>
-                    </div>
-                </div>
-            </div>
-            <div class='col-6'>
-                <div class='card' style='background: rgba(127, 132, 135, 0.1); border: 1px solid #FF8F00;'>
-                    <div class='card-body text-center'>
-                        <img src='../img/pruebaenblanco.png' style='width: 150px; height: 100px; object-fit: cover; border-radius: 10px; border: 2px solid #FF8F00;'>
-                        <h5 style='color: #FF8F00; margin: 1rem 0;'>{$v2['nombre']}</h5>
-                        <p style='color: #E0E0E0; font-size: 0.9rem;'>" . substr($v2['descripcion'], 0, 100) . "...</p>
-                    </div>
-                </div>
-            </div>
-          </div>";
+    $vehiculos = [];
+    while($row = $result->fetch_assoc()) {
+        $vehiculos[] = $row;
+    }
+    
+    if (count($vehiculos) == 2) {
+        echo "<div class='row mt-3'>";
+        foreach($vehiculos as $v) {
+            echo "<div class='col-6'>";
+            echo "<div class='card' style='background: rgba(26, 26, 26, 0.9); border: 1px solid #FF8F00;'>";
+            if (!empty($v['imagen_principal'])) {
+                echo "<img src='{$v['imagen_principal']}' class='card-img-top' style='height: 200px; object-fit: cover;'>";
+            }
+            echo "<div class='card-body'>";
+            echo "<h5 style='color: #FF8F00;'>{$v['nombre']}</h5>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Tipo:</strong> {$v['tipo']}</p>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Año:</strong> {$v['año']}</p>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Descripción:</strong> " . substr($v['descripcion'], 0, 100) . "...</p>";
+            echo "</div></div></div>";
+        }
+        echo "</div>";
+    }
 }
 ?>

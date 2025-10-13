@@ -166,24 +166,27 @@ $current = $config[$categoria] ?? $config['personajes'];
                 }
 
                 if ($categoria === 'linea_tiempo') {
-                    // Layout especial para línea de tiempo con col-3
-                    echo '<div class="row">';
-                    foreach($items as $item):
-                        $id = $item['id_evento'];
-                        $link = $current['info_page'] . "?id=" . $id;
-                ?>
-                        <div class="col-md-3 mb-4">
-                            <a href="<?= $link ?>" class="text-decoration-none">
-                                <div class="card timeline-card">
-                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['año'] ?>" class="card-img-top">
-                                    <div class="card-body text-center">
-                                        <h4 class="timeline-year"><?= $item['año'] ?></h4>
+                    // Layout especial para línea de tiempo - 4 cards por fila, ordenado cronológicamente
+                    $eventos = $conn->query("SELECT * FROM linea_tiempo ORDER BY año ASC")->fetch_all(MYSQLI_ASSOC);
+                    echo '<div class="linea-tiempo-cronologica">';
+                    echo '<div class="row g-3">';
+                    foreach ($eventos as $evento):
+            ?>
+                        <div class="col-md-3">
+                            <a href="cronologia_info.php?id=<?= $evento['id_evento'] ?>" class="text-decoration-none">
+                                <div class="personaje-card-carrusel">
+                                    <div class="personaje-imagen">
+                                        <img src="<?= $evento['imagen_principal'] ?>" alt="<?= $evento['año'] ?>">
+                                    </div>
+                                    <div class="personaje-info" style="padding: 1rem; text-align: center;">
+                                        <h3 class="personaje-nombre" style="font-size: 2rem; font-weight: bold; color: #FF8F00;"><?= $evento['año'] ?></h3>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                <?php 
+                    <?php
                     endforeach;
+                    echo '</div>';
                     echo '</div>';
                 } elseif ($categoria === 'peliculas') {
                     // Layout simple para películas
@@ -194,17 +197,14 @@ $current = $config[$categoria] ?? $config['personajes'];
                         <div class="pelicula-section-simple col-12">
                             <h2><a href="<?= $link ?>" class="pelicula-titulo-link"><?= $item['titulo'] ?></a></h2>
                             <div class="row">
-                                <div class="col-md-3 mb-3">
-                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                <div class="col-md-4 mb-3">
+                                    <img src="<?= $item['galeria_imagen1'] ?: '../img/pruebaenblanco.png' ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                <div class="col-md-4 mb-3">
+                                    <img src="<?= $item['galeria_imagen2'] ?: '../img/pruebaenblanco.png' ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <img src="<?= $item['imagen_principal'] ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
+                                <div class="col-md-4 mb-3">
+                                    <img src="<?= $item['galeria_imagen3'] ?: '../img/pruebaenblanco.png' ?>" alt="<?= $item['titulo'] ?>" class="pelicula-img-simple">
                                 </div>
                             </div>
                         </div>

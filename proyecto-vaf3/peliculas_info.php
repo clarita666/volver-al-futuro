@@ -25,9 +25,12 @@ if (!$pelicula) {
             <img src="<?= $pelicula['imagen_principal'] ?>" alt="<?= $pelicula['titulo'] ?>" class="pelicula-img">
             <div class="pelicula-info">
                 <h2><?= $pelicula['titulo'] ?></h2>
+                <div class="info-item"><strong>Año:</strong> <?= $pelicula['año'] ?></div>
                 <div class="info-item"><strong>Director:</strong> <?= $pelicula['director'] ?></div>
                 <div class="info-item"><strong>Productor:</strong> <?= $pelicula['productor'] ?></div>
                 <div class="info-item"><strong>Escritor:</strong> <?= $pelicula['escritor'] ?></div>
+                <div class="info-item"><strong>Duración:</strong> <?= $pelicula['duracion'] ?></div>
+                <div class="info-item"><strong>Género:</strong> <?= $pelicula['genero'] ?></div>
             </div>
         </div>
         
@@ -35,46 +38,25 @@ if (!$pelicula) {
             <?= $pelicula['resumen'] ?>
         </div>
         
-        <?php 
-        // Obtener URLs de video según el ID de la película
-        $video_id = $pelicula_id + 6; // ID 1->7, ID 2->8, ID 3->9
-        $videos_data = categoria_particular($conn, 'peliculas', $video_id);
-        $videos = $videos_data[0] ?? null;
+
         
-        // Función para convertir URL de YouTube a embed
-        function convertToEmbed($url) {
-            if (strpos($url, 'youtube.com/watch?v=') !== false) {
-                $video_id = substr($url, strpos($url, 'v=') + 2);
-                if (strpos($video_id, '&') !== false) {
-                    $video_id = substr($video_id, 0, strpos($video_id, '&'));
-                }
-                return 'https://www.youtube.com/embed/' . $video_id;
-            }
-            return $url;
-        }
-        
-        if ($videos && (!empty($videos['url_video1']) || !empty($videos['url_video2']) || !empty($videos['url_video3']))): ?>
+        <?php if ($pelicula['galeria_imagen1'] || $pelicula['galeria_imagen2'] || $pelicula['galeria_imagen3']): ?>
         <div class="mt-4">
-            <h3 style="color: #FF8F00; margin-bottom: 1rem;">Ver Película Online</h3>
+            <h3 style="color: #FF8F00; margin-bottom: 1rem;">Galería de Imágenes</h3>
             <div class="row">
-                <?php if (!empty($videos['url_video1'])): ?>
+                <?php if ($pelicula['galeria_imagen1']): ?>
                 <div class="col-md-4">
-                    <iframe width="100%" height="250" src="<?= convertToEmbed($videos['url_video1']) ?>" 
-                            title="Ver Película - Opción 1" frameborder="0" allowfullscreen></iframe>
+                    <img src="<?= $pelicula['galeria_imagen1'] ?>" alt="<?= $pelicula['titulo'] ?> - Imagen 1" class="img-fluid" style="border-radius: 10px;">
                 </div>
                 <?php endif; ?>
-                
-                <?php if (!empty($videos['url_video2'])): ?>
+                <?php if ($pelicula['galeria_imagen2']): ?>
                 <div class="col-md-4">
-                    <iframe width="100%" height="250" src="<?= convertToEmbed($videos['url_video2']) ?>" 
-                            title="Ver Película - Opción 2" frameborder="0" allowfullscreen></iframe>
+                    <img src="<?= $pelicula['galeria_imagen2'] ?>" alt="<?= $pelicula['titulo'] ?> - Imagen 2" class="img-fluid" style="border-radius: 10px;">
                 </div>
                 <?php endif; ?>
-                
-                <?php if (!empty($videos['url_video3'])): ?>
+                <?php if ($pelicula['galeria_imagen3']): ?>
                 <div class="col-md-4">
-                    <iframe width="100%" height="250" src="<?= convertToEmbed($videos['url_video3']) ?>" 
-                            title="Ver Película - Opción 3" frameborder="0" allowfullscreen></iframe>
+                    <img src="<?= $pelicula['galeria_imagen3'] ?>" alt="<?= $pelicula['titulo'] ?> - Imagen 3" class="img-fluid" style="border-radius: 10px;">
                 </div>
                 <?php endif; ?>
             </div>

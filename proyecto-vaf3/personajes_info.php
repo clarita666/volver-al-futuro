@@ -56,75 +56,49 @@ if (!$personaje) {
         </div>
         <?php endif; ?>
         
+        <?php if (isset($personaje['alias']) && $personaje['alias']): ?>
+        <div class="alias-section">
+            <h4><i class="fas fa-tag"></i> Alias</h4>
+            <p><?= $personaje['alias'] ?></p>
+        </div>
+        <?php endif; ?>
+        
+        <?php if (isset($personaje['ocupacion']) && $personaje['ocupacion']): ?>
+        <div class="ocupacion-section">
+            <h4><i class="fas fa-briefcase"></i> Ocupación</h4>
+            <p><?= $personaje['ocupacion'] ?></p>
+        </div>
+        <?php endif; ?>
+        
+        <?php if ($personaje['fecha_nacimiento']): ?>
+        <div class="fecha-section">
+            <h4><i class="fas fa-birthday-cake"></i> Información Personal</h4>
+            <p><strong>Edad:</strong> <?= date('Y') - date('Y', strtotime($personaje['fecha_nacimiento'])) ?> años</p>
+        </div>
+        <?php endif; ?>
+        
         <?php if ($personaje['galeria_imagen1'] || $personaje['galeria_imagen2'] || $personaje['galeria_imagen3']): ?>
         <div class="galeria-section">
             <h4><i class="fas fa-images"></i> Galería de Imágenes</h4>
-            <div class="galeria-grid">
+            <div class="row">
                 <?php if ($personaje['galeria_imagen1']): ?>
-                    <div class="galeria-item">
-                        <img src="<?= $personaje['galeria_imagen1'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 1" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <img src="<?= $personaje['galeria_imagen1'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 1" class="img-fluid" style="border-radius: 10px;">
+                </div>
                 <?php endif; ?>
                 <?php if ($personaje['galeria_imagen2']): ?>
-                    <div class="galeria-item">
-                        <img src="<?= $personaje['galeria_imagen2'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 2" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <img src="<?= $personaje['galeria_imagen2'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 2" class="img-fluid" style="border-radius: 10px;">
+                </div>
                 <?php endif; ?>
                 <?php if ($personaje['galeria_imagen3']): ?>
-                    <div class="galeria-item">
-                        <img src="<?= $personaje['galeria_imagen3'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 3" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <img src="<?= $personaje['galeria_imagen3'] ?>" alt="<?= $personaje['nombre'] ?> - Imagen 3" class="img-fluid" style="border-radius: 10px;">
+                </div>
                 <?php endif; ?>
             </div>
         </div>
         <?php endif; ?>
-        
-        <!-- Sección de datos curiosos -->
-        <div class="datos-section">
-            <h4><i class="fas fa-lightbulb"></i> Datos Curiosos</h4>
-            <div class="datos-grid">
-                <div class="dato-item">
-                    <div class="dato-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="dato-content">
-                        <h6>Viajes en el Tiempo</h6>
-                        <p>Personaje clave en la saga de viajes temporales</p>
-                    </div>
-                </div>
-                
-                <div class="dato-item">
-                    <div class="dato-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="dato-content">
-                        <h6>Importancia</h6>
-                        <p>Uno de los personajes principales de la trilogía</p>
-                    </div>
-                </div>
-                
-                <?php if ($personaje['fecha_nacimiento']): ?>
-                <div class="dato-item">
-                    <div class="dato-icon">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                    <div class="dato-content">
-                        <h6>Edad Actual</h6>
-                        <p><?= date('Y') - date('Y', strtotime($personaje['fecha_nacimiento'])) ?> años</p>
-                    </div>
-                </div>
-                <?php endif; ?>
-            </div>
-        </div>
         
         <div class="mt-4 text-center">
             <a href="previews.php?categoria=personajes" class="btn btn-volver">

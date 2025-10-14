@@ -31,24 +31,24 @@ if (!$evento) {
             <div class="cronologia-info">
                 <div class="año-principal"><?= $evento['año'] ?></div>
                 
-                <?php if ($evento['ubicacion']): ?>
+                <?php if ($evento['titulo_evento']): ?>
                 <div class="info-section">
-                    <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
-                    <p><?= $evento['ubicacion'] ?></p>
+                    <h4><i class="fas fa-star"></i> Evento</h4>
+                    <p><strong><?= $evento['titulo_evento'] ?></strong></p>
                 </div>
                 <?php endif; ?>
                 
                 <?php if ($evento['historia']): ?>
                 <div class="info-section">
                     <h4><i class="fas fa-book"></i> Historia</h4>
-                    <p><?= $evento['historia'] ?></p>
+                    <p><?= nl2br($evento['historia']) ?></p>
                 </div>
                 <?php endif; ?>
                 
-                <?php if ($evento['diferencias']): ?>
+                <?php if ($evento['ubicacion']): ?>
                 <div class="info-section">
-                    <h4><i class="fas fa-exchange-alt"></i> Diferencias</h4>
-                    <p><?= $evento['diferencias'] ?></p>
+                    <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
+                    <p><?= nl2br($evento['ubicacion']) ?></p>
                 </div>
                 <?php endif; ?>
                 
@@ -56,20 +56,6 @@ if (!$evento) {
                 <div class="info-section">
                     <h4><i class="fas fa-film"></i> Apariciones</h4>
                     <p><?= $evento['apariciones'] ?></p>
-                </div>
-                <?php endif; ?>
-                
-                <?php if ($evento['fuentes']): ?>
-                <div class="info-section">
-                    <h4><i class="fas fa-users"></i> Fuentes</h4>
-                    <p><?= $evento['fuentes'] ?></p>
-                </div>
-                <?php endif; ?>
-                
-                <?php if ($evento['referencias']): ?>
-                <div class="info-section">
-                    <h4><i class="fas fa-link"></i> Referencias</h4>
-                    <p><?= $evento['referencias'] ?></p>
                 </div>
                 <?php endif; ?>
             </div>

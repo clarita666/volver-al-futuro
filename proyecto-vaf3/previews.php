@@ -42,46 +42,147 @@ $current = $config[$categoria] ?? $config['personajes'];
 
     <?php if ($categoria === 'creditos'): ?>
         <div class="container my-5">
-            <div class="row justify-content-center g-4">
-                <!-- Desarrolladores -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #2d2d2d; color: #fff;">
-                        <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #b8860b;">Desarrollado por</h3>
-                            <p class="mb-1">Cynthia de Mey</p>
-                            <p class="mb-1">Angela Choque</p>
-                            <p class="mb-1">Miriam Ferreiro</p>
-                            <p class="mb-1">Silvia</p>
-                            <p class="mb-1">Clara Iriarte</p>
-                            <p class="mb-1">Lara Devoto</p>
-                            <p class="mb-1">Miguel Escobar</p>
+            <!-- Sección de Desarrolladores -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-4" style="color: #FF8F00; font-family: 'Orbitron', sans-serif;">Equipo de Desarrollo</h2>
+                </div>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <!-- Desarrollador 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/cynthia.jpg" alt="Cynthia" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Cynthia+de+Mey&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Cynthia de Mey</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrolladora Full Stack</p>
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- Desarrollador 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/angela.jpg" alt="Angela" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Angela+Choque&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Angela Choque</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrolladora Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desarrollador 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/miriam.jpg" alt="Miriam" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Miriam+Ferreiro&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Miriam Ferreiro</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrolladora Backend</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desarrollador 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/silvia.jpg" alt="Silvia" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Silvia&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Silvia</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Diseñadora UX/UI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desarrollador 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/clara.jpg" alt="Clara" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Clara+Iriarte&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Clara Iriarte</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrolladora Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desarrollador 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/lara.jpg" alt="Lara" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Lara+Devoto&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Lara Devoto</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrolladora Full Stack</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desarrollador 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <div class="avatar-container mb-3">
+                                <img src="../img/avatars/miguel.jpg" alt="Miguel" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Miguel+Escobar&background=FF8F00&color=000&size=80'">
+                            </div>
+                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Miguel Escobar</h5>
+                            <p style="color: #E0E0E0; font-size: 0.9rem;">Desarrollador Backend</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Información del Proyecto -->
+            <div class="row g-4">
                 <!-- Tecnologías -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #3a3a3a; color: #fff;">
-                        <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #b8860b;">Tecnologías utilizadas</h3>
-                            <ul class="list-unstyled">
-                                <li>PHP & MySQL</li>
-                                <li>Bootstrap 5</li>
-                                <li>HTML5 & CSS3</li>
-                            </ul>
+                <div class="col-md-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-code fa-3x mb-3" style="color: #FF8F00;"></i>
+                            <h3 class="card-title mb-3" style="color: #FF8F00;">Tecnologías Utilizadas</h3>
+                            <div class="row text-start">
+                                <div class="col-6">
+                                    <ul class="list-unstyled" style="color: #E0E0E0;">
+                                        <li><i class="fab fa-php" style="color: #FF8F00;"></i> PHP 8.0</li>
+                                        <li><i class="fas fa-database" style="color: #FF8F00;"></i> MySQL</li>
+                                        <li><i class="fab fa-bootstrap" style="color: #FF8F00;"></i> Bootstrap 5</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled" style="color: #E0E0E0;">
+                                        <li><i class="fab fa-html5" style="color: #FF8F00;"></i> HTML5</li>
+                                        <li><i class="fab fa-css3-alt" style="color: #FF8F00;"></i> CSS3</li>
+                                        <li><i class="fab fa-js-square" style="color: #FF8F00;"></i> JavaScript</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Inspiración -->
-                <div class="col-md-4">
-                    <div class="card shadow-lg border-0 rounded-3 h-100" style="background: #1a1a2e; color: #fff;">
-                        <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #b8860b;">Inspirado en</h3>
-                            <p>
-                                La trilogía <strong>"Volver al Futuro"</strong> (1985-1990) <br>
-                                Dirigida por <em>Robert Zemeckis</em>
-                            </p>
+                <div class="col-md-6">
+                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-film fa-3x mb-3" style="color: #FF8F00;"></i>
+                            <h3 class="card-title mb-3" style="color: #FF8F00;">Inspirado en</h3>
+                            <div style="color: #E0E0E0;">
+                                <h4 style="color: #FF8F00; margin-bottom: 1rem;">"Volver al Futuro"</h4>
+                                <p><strong>Trilogía:</strong> 1985-1990</p>
+                                <p><strong>Director:</strong> Robert Zemeckis</p>
+                                <p><strong>Guionista:</strong> Bob Gale</p>
+                                <p class="mt-3"><em>"El futuro no está escrito. Puede ser cambiado. ¡Tú sabes eso!"</em></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,25 +320,33 @@ $current = $config[$categoria] ?? $config['personajes'];
                         <h4 style="color: #FF8F00; font-family: 'Orbitron', sans-serif; margin-bottom: 1.5rem;">Datos Curiosos</h4>
                         
                         <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                            <img src="../img/Infografia/Infografías y un video sobre Volver al Futuro para tus favoritos.jpg" alt="Infografía completa" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
-                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Infografía Completa</h6>
-                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Descubre todos los datos fascinantes y curiosidades sobre la trilogía de Volver al Futuro.</p>
+                            <img src="../img/Infografia/info1.jpg" alt="Infografía 1" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; border: 2px solid #FF8F00;" data-bs-toggle="modal" data-bs-target="#modalImagenGrande" data-img="../img/Infografia/info1.jpg">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Datos Fascinantes</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Haz clic para ver en tamaño completo</p>
                         </div>
                         
                         <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                            <h6 style="color: #FF8F00; font-size: 0.9rem;">DeLorean DMC-12</h6>
-                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">El DeLorean fue elegido como máquina del tiempo porque parecía una nave espacial y tenía puertas de gaviota únicas. Solo se fabricaron 9,000 unidades de este auto exótico que se convirtió en un ícono del cine.</p>
+                            <img src="../img/Infografia/info2.jpg" alt="Infografía 2" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; border: 2px solid #FF8F00;" data-bs-toggle="modal" data-bs-target="#modalImagenGrande" data-img="../img/Infografia/info2.jpg">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Curiosidades del DeLorean</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Haz clic para ver en tamaño completo</p>
                         </div>
                         
                         <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                            <img src="../img/Infografia/Volver_.jpg" alt="Datos especiales" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem;">
+                            <img src="../img/Infografia/info3.jpg" alt="Infografía 3" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; border: 2px solid #FF8F00;" data-bs-toggle="modal" data-bs-target="#modalImagenGrande" data-img="../img/Infografia/info3.jpg">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Detalles de la Trilogía</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Haz clic para ver en tamaño completo</p>
+                        </div>
+                        
+                        <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                            <img src="../img/Infografia/info4.jpeg" alt="Infografía 4" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; border: 2px solid #FF8F00;" data-bs-toggle="modal" data-bs-target="#modalImagenGrande" data-img="../img/Infografia/info4.jpeg">
                             <h6 style="color: #FF8F00; font-size: 0.9rem;">Datos Especiales</h6>
-                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Información detallada sobre los elementos más importantes de la saga.</p>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Haz clic para ver en tamaño completo</p>
                         </div>
                         
                         <div class="dato-card" style="background: rgba(127, 132, 135, 0.1); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
-                            <h6 style="color: #FF8F00; font-size: 0.9rem;">88 mph - La Velocidad Mágica</h6>
-                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Esta velocidad se eligió porque se veía bien en el velocímetro digital del DeLorean y sonaba futurista. En el guion original era 65 mph, pero se cambió porque no era lo suficientemente espectacular para el cine.</p>
+                            <img src="../img/Infografia/info5.jpg" alt="Infografía 5" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; margin-bottom: 0.5rem; cursor: pointer; border: 2px solid #FF8F00;" data-bs-toggle="modal" data-bs-target="#modalImagenGrande" data-img="../img/Infografia/info5.jpg">
+                            <h6 style="color: #FF8F00; font-size: 0.9rem;">Más Curiosidades</h6>
+                            <p style="color: #E0E0E0; font-size: 0.8rem; margin: 0;">Haz clic para ver en tamaño completo</p>
                         </div>
                     </div>
                 </div>
@@ -246,7 +355,42 @@ $current = $config[$categoria] ?? $config['personajes'];
     <?php endif; ?>
 </div>
 
+<!-- Modal para ver imágenes grandes -->
+<div class="modal fade" id="modalImagenGrande" tabindex="-1" aria-labelledby="modalImagenGrandeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" style="background: rgba(26, 26, 26, 0.95);">
+            <div class="modal-header" style="border-bottom: 1px solid #FF8F00;">
+                <h5 class="modal-title" id="modalImagenGrandeLabel" style="color: #FF8F00;">Infografía</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="imagenGrande" src="" class="img-fluid" style="max-height: 80vh; border-radius: 10px;" alt="Infografía">
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Bootstrap CSS (actualizado) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle con Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modalImagenGrande');
+    const modalImg = modal.querySelector('#imagenGrande');
+
+    // Delegación de eventos para cualquier clic en el documento
+    document.body.addEventListener('click', function(event) {
+        const target = event.target.closest('[data-bs-toggle="modal"][data-img]');
+        if (target) {
+            const imgSrc = target.getAttribute('data-img');
+            modalImg.src = imgSrc;
+        }
+    });
+});
+</script>
 
 <?php require "partials/footer.php"; ?>
 

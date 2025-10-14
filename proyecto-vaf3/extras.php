@@ -167,39 +167,39 @@ require "partials/header.php";
         <div class="row g-4">
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
-                    <img src='../img/Comics/portada_2015.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada 2015'>
+                    <div class='text-center' style='padding: 1rem;'><img src='../img/Comics/back_to_the_future2015/comic 2015.jpg' alt='Portada 2015'></div>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Back to the Future (2015)</h5>
                     </div>
                     <div class='card-body'>
-                        <a href='../img/Comics/Back to the Future (2015)/1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 1</a>
-                        <a href='../img/Comics/Back to the Future (2015)/2.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 2</a>
+                        <a href='../img/Comics/back_to_the_future2015/1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 1</a>
+                        <a href='../img/Comics/back_to_the_future2015/2.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 2</a>
                     </div>
                 </div>
             </div>
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
-                    <img src='../img/Comics/portada_1991.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada 1991'>
+                    <div class='text-center' style='padding: 1rem;'><img src='../img/Comics/back_to_the_future1991/portada.jpg' alt='Portada 1991'></div>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Back to the Future 1991</h5>
                     </div>
                     <div class='card-body'>
-                        <a href='../img/Comics/Back to the future 1991/1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 1</a>
-                        <a href='../img/Comics/Back to the future 1991/2.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 2</a>
-                        <a href='../img/Comics/Back to the future 1991/3.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 3</a>
-                        <a href='../img/Comics/Back to the future 1991/4.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 4</a>
-                        <a href='../img/Comics/Back to the future 1991/Especial.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Especial</a>
+                        <a href='../img/Comics/back_to_the_future1991/1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 1</a>
+                        <a href='../img/Comics/back_to_the_future1991/2.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 2</a>
+                        <a href='../img/Comics/back_to_the_future1991/3.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 3</a>
+                        <a href='../img/Comics/back_to_the_future1991/4.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Número 4</a>
+                        <a href='../img/Comics/back_to_the_future1991/Especial.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Especial</a>
                     </div>
                 </div>
             </div>
             <div class='col-md-4'>
                 <div class='card' style='background: rgba(26, 26, 26, 0.8); border: 2px solid #FF8F00;'>
-                    <img src='../img/Comics/portada_biff.jpg' class='card-img-top' style='height: 200px; object-fit: cover;' alt='Portada Biff'>
+                    <div class='text-center' style='padding: 1rem;'><img src='../img/Comics/biff_to_the_future/portada.webp' alt='Portada Biff'></div>
                     <div class='card-header' style='background: rgba(255, 143, 0, 0.1);'>
                         <h5 style='color: #FF8F00; margin: 0;'>Biff to the Future</h5>
                     </div>
                     <div class='card-body'>
-                        <a href='../img/Comics/Back to the future- Biff to the future/BIFF-DEL-FUTURO-VOLVER-AL-FUTURO 1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Biff del Futuro</a>
+                        <a href='../img/Comics/biff_to_the_future/BIFF-DEL-FUTURO-VOLVER-AL-FUTURO 1.pdf' target='_blank' class='btn btn-custom btn-sm mb-2 d-block'>Biff del Futuro</a>
                     </div>
                 </div>
             </div>

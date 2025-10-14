@@ -23,7 +23,8 @@ if ($_POST['tipo'] == 'personajes') {
             }
             echo "<div class='card-body'>";
             echo "<h5 style='color: #FF8F00;'>{$p['nombre']}</h5>";
-            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Edad:</strong> {$p['edad']}</p>";
+            $edad = $p['fecha_nacimiento'] ? (date('Y') - date('Y', strtotime($p['fecha_nacimiento']))) . ' años' : 'No disponible';
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Edad:</strong> {$edad}</p>";
             echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Ocupación:</strong> {$p['ocupacion']}</p>";
             echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Descripción:</strong> " . substr($p['descripcion'], 0, 100) . "...</p>";
             echo "</div></div></div>";
@@ -54,7 +55,7 @@ if ($_POST['tipo'] == 'vehiculos') {
             }
             echo "<div class='card-body'>";
             echo "<h5 style='color: #FF8F00;'>{$v['nombre']}</h5>";
-            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Tipo:</strong> {$v['tipo']}</p>";
+            echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Fuente de Energía:</strong> {$v['fuente_energia']}</p>";
             echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Año:</strong> {$v['año']}</p>";
             echo "<p style='color: #E0E0E0; font-size: 0.9em;'><strong>Descripción:</strong> " . substr($v['descripcion'], 0, 100) . "...</p>";
             echo "</div></div></div>";

@@ -57,7 +57,7 @@
     <div class="col-md-4">
       <div class="card" style="background-color: #FF8F00;">
         <a href="extras.php">
-          <img src="../img/cards-inicio/cronologia.jpg" class="card-img-top" alt="Extras">
+          <img src="../img/cards-inicio/extras.jpg" class="card-img-top" alt="Extras">
         </a>
         <div class="card-body"><h5>Extras</h5></div>
       </div>

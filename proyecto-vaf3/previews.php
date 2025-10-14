@@ -89,18 +89,6 @@ $current = $config[$categoria] ?? $config['personajes'];
                     </div>
                 </div>
                 
-                <!-- Desarrollador 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card h-100" style="background: rgba(26, 26, 26, 0.9); border: 2px solid #FF8F00; border-radius: 15px;">
-                        <div class="card-body text-center p-4">
-                            <div class="avatar-container mb-3">
-                                <img src="../img/avatars/silvia.jpg" alt="Silvia" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #FF8F00;" onerror="this.src='https://ui-avatars.com/api/?name=Silvia&background=FF8F00&color=000&size=80'">
-                            </div>
-                            <h5 style="color: #FF8F00; margin-bottom: 0.5rem;">Silvia</h5>
-                            <p style="color: #E0E0E0; font-size: 0.9rem;">Diseñadora UX/UI</p>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Desarrollador 5 -->
                 <div class="col-lg-3 col-md-4 col-sm-6">

@@ -62,7 +62,7 @@ if (!empty($termino)) {
                                         <p><?= substr(htmlspecialchars($resultado['descripcion']), 0, 150) ?>...</p>
                                     <?php endif; ?>
                                 </div>
-                                <!-- CAMBIAR EN LA BASE DE DATOS EL NOMBRE DE LINEA_TIEMPO,  -->
+                                <!-- CAMBIAR EN LA BASE DE DATOS EL NOMBRE DE LINEA_TIEMPO, aaaaaaaaaaaaaaaaa  -->
                                 <span class="tipo-badge"><?= ucfirst($tabla) ?></span> 
                             </div>
                         </div>

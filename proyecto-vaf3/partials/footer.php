@@ -2,13 +2,9 @@
 <footer class="footer mt-auto py-3" style="background-color:#001BB7; position: fixed; bottom: 0; left: 0; right: 0; width: 100%; z-index: 9999;">
   <div class="container d-flex justify-content-between align-items-center">
     <!-- Links a la izquierda -->
-    <div>
-      <a href="previews.php?categoria=personajes" class="footer-link">Personajes</a>
-      <a href="previews.php?categoria=peliculas" class="footer-link">Películas</a>
-      <a href="previews.php?categoria=vehiculos" class="footer-link">Vehículos</a>
-      <a href="previews.php?categoria=linea_tiempo" class="footer-link">Línea de Tiempo</a>
-      <a href="previews.php?categoria=creditos" class="footer-link">Créditos</a>
-    </div>
+   <div>
+    <p>Derechos Reservados</p>
+   </div>
 
     <!-- Logo a la derecha -->
     <div class="text-end text-white fw-bold d-flex align-items-center">

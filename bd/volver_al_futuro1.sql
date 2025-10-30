@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2025 a las 21:03:05
+-- Tiempo de generación: 30-10-2025 a las 18:59:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `volver_al_futuro1`
 --
+CREATE DATABASE IF NOT EXISTS `volver_al_futuro1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `volver_al_futuro1`;
 
 -- --------------------------------------------------------
 
